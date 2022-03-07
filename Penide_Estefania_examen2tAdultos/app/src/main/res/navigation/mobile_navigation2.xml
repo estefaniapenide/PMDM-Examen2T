@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.example.penide_estefania_examen2tadultos.ui.inicio.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_juego"
+            app:destination="@id/nav_juego" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_juego"
+        android:name="com.example.penide_estefania_examen2tadultos.ui.juego.JuegoFragment"
+        android:label="Tres en raya"
+        tools:layout="@layout/fragment_juego" >
+        <action
+            android:id="@+id/action_nav_juego_to_nav_ganador"
+            app:destination="@id/nav_ganador" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ganador"
+        android:name="com.example.penide_estefania_examen2tadultos.ui.ganador.GanadorFragment"
+        android:label="Ganador"
+        tools:layout="@layout/fragment_ganador">
+    <argument
+        android:name="ganador"
+        app:argType="string"
+        android:defaultValue=""/>
+    </fragment>
+</navigation>
