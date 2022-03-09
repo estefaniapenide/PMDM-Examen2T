@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.penide_estefania_examen2tadultos.databinding.ActivityBottomNavigationBinding
@@ -16,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 class BottomNavigationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBottomNavigationBinding
+    private lateinit var appBarConfiguration:AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +41,17 @@ class BottomNavigationActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var mensaje= supportActionBar!!.title.toString()
-        Snackbar.make(binding.root,mensaje, Snackbar.LENGTH_SHORT).show()
+        when(item.itemId){
+            R.id.itemmensaje->{
+                var mensaje= supportActionBar!!.title.toString()
+                Snackbar.make(binding.root,mensaje, Snackbar.LENGTH_SHORT).show()
+            }
+        }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_activity_bottom_navigation)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

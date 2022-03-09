@@ -19,6 +19,7 @@ class InicioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.buttonEmpezar.setOnClickListener { findNavController().navigate(InicioFragmentDirections.actionNavInicioToNavJuego()) }
     }
 

@@ -32,6 +32,7 @@
 
     <style name="Theme.Penide_Estefania_examen2tAdultos.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="tictactoebutton">
+        <item name="android:layout_margin">2dp</item>
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:textSize">30sp</item>
